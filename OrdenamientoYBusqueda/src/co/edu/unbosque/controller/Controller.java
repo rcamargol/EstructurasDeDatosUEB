@@ -15,7 +15,10 @@ public class Controller {
 	}
 	
 	public void funcionar() {
-		m.getOrdenamiento().ordenarBurbuja();
+		int a[] = {44,55,12,42,94,18,6,67};
+		m.getOrdenamiento().setA(a);
+		m.getOrdenamiento().mostrarArrayInicial("Método Shell");
+		m.getOrdenamiento().ordenarShell(a);
 		gui.mostrarArreglo(m.getOrdenamiento().getA());
 	}
 }

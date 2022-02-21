@@ -31,15 +31,15 @@ public class Busqueda {
 		bajo = 0;
 		alto = a.length - 1;
 		while (bajo <= alto) {
-			central = (bajo + alto) / 2; // índice de elemento central
-			valorCentral = a[central]; // valor del índice central
+			central = (bajo + alto) / 2; 
+			valorCentral = a[central]; 
 			if (elemento == valorCentral)
-				return central; // encontrado, devuelve posición
+				return central; 
 			else if (elemento < valorCentral)
-				alto = central - 1; // ir a sublista inferior
+				alto = central - 1; 
 			else
-				bajo = central + 1; // ir a sublista superior
+				bajo = central + 1; 
 		}
-		return -1; // elemento no encontrado
+		return -1; 
 	}
 }
