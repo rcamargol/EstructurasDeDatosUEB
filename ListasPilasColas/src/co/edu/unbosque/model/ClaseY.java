@@ -9,11 +9,6 @@ public class ClaseY {
 		this.cabeza = null;
 	}
 
-	public void insertarNodos() {
-		Nodo a, b, c;
-
-	}
-
 	public void crearNodo(int info) {
 		this.nodo = new Nodo();
 		this.nodo.setInfo(info);

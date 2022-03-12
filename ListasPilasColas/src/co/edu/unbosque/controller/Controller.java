@@ -11,7 +11,8 @@ public class Controller {
 	public Controller() {
 		m = new ClaseX();
 		gui = new View();
-		funcionar();
+		//funcionar();
+		probarListaOrdenada();
 	}
 
 	public void funcionar() {
@@ -43,5 +44,13 @@ public class Controller {
 		System.out.println(m.getY().removerNodo(-300));
 		gui.mostrarLista(m.getY().getCabeza());
 
+	}
+	
+	public void probarListaOrdenada() {
+		int [] numeros = {7,3,8,1,10,4,2,40};
+		for (int i = 0 ; i< numeros.length ; i++) {
+			m.getL().insertarListaOrdenada(numeros[i]);
+			gui.mostrarLista(m.getL().getCabeza());
+		}
 	}
 }
