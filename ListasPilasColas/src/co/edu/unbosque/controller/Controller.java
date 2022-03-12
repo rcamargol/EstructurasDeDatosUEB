@@ -25,6 +25,8 @@ public class Controller {
 		gui.mostrarLista(m.getY().buscarInfoLista(67));
 		System.out.println("Insertar -100 al inicio");
 		m.getY().insertarNodoInicio(-100);
+		System.out.println("Insertar -300 al inicio");
+		m.getY().insertarNodoInicio(-300);
 		gui.mostrarLista(m.getY().getCabeza());
 		System.out.println("Insertar 67 al final");
 		m.getY().insertarNodoFinal(67);
@@ -32,5 +34,8 @@ public class Controller {
 		System.out.println("Insertar 79 entre 3 y 67");
 		m.getY().insertarNodoEntreNodos(79, 3, 67);
 		gui.mostrarLista(m.getY().getCabeza());
+		System.out.println("busqueda de 67");
+		gui.mostrarLista(m.getY().buscarInfoLista(67));
+
 	}
 }

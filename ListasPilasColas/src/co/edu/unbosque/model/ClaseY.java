@@ -71,30 +71,24 @@ public class ClaseY {
 		return p;
 	}
 
-	public Nodo removerNodo(int info) {
-		Nodo p = null, q = null;
-		if (!listaVacia()) {// lista no es vacia
-			p = this.cabeza;
-			q = p.getSiguiente();
-			if (q == null) {// lista con un solo nodo
-				if (p.getInfo() == info) {
-					this.cabeza = null;
+	public int removerNodo(int info) {
+		Nodo p,q;
+		if (!listaVacia()) { // lista no es vacia
+			p = buscarInfoLista(info);
+			if (p != null) { // el nodo está en la lista
+				if (p == this.cabeza) {//el nodo está en la cabeza
+					this.cabeza = p.getSiguiente();
 				}
-			} else { // lista con dos nodos
-				if (q.getSiguiente() == null) {
-					if (p.getInfo() == info) {
-						// desconectar p de la lista
-					} else {
-						if (q.getInfo() == info) {
-							// desconectar q de la lista
-						}
+				else {
+					q = this.cabeza;
+					while(q.getSiguiente() != p) {
+						q = q.getSiguiente();
 					}
+					q.setSiguiente(p.getSiguiente());
 				}
 			}
-
 		}
-		// cabeza = p;
-		return null;
+		return -1;
 	}
 
 	public Nodo getNodo() {
