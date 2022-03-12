@@ -16,16 +16,21 @@ public class Controller {
 
 	public void funcionar() {
 		if (m.getY().listaVacia())
-			m.getY().crearLista(-1);
+			m.getY().crearLista(99);
 		for (int i = 0; i < 3; i++) {
 			m.getY().insertarNodoFinal(i+1);
 		}
 		gui.mostrarLista(m.getY().getCabeza());
-		System.out.println("busqueda");
+		System.out.println("busqueda de 67");
 		gui.mostrarLista(m.getY().buscarInfoLista(67));
-		System.out.println("Insertar al inicio");
+		System.out.println("Insertar -100 al inicio");
 		m.getY().insertarNodoInicio(-100);
 		gui.mostrarLista(m.getY().getCabeza());
-		
+		System.out.println("Insertar 67 al final");
+		m.getY().insertarNodoFinal(67);
+		gui.mostrarLista(m.getY().getCabeza());
+		System.out.println("Insertar 79 entre 2 y 3");
+		m.getY().insertarNodoEntreNodos(79, 2, 3);
+		gui.mostrarLista(m.getY().getCabeza());
 	}
 }

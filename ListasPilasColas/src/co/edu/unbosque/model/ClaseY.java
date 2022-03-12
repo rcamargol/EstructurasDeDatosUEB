@@ -8,16 +8,16 @@ public class ClaseY {
 	public ClaseY() {
 		this.cabeza = null;
 	}
-	
+
 	public void insertarNodos() {
 		Nodo a, b, c;
-		
+
 	}
-	
+
 	public void crearNodo(int info) {
 		this.nodo = new Nodo();
 		this.nodo.setInfo(info);
-		this.nodo.setSiguiente(null);		
+		this.nodo.setSiguiente(null);
 	}
 
 	public void crearLista(int info) {
@@ -32,7 +32,6 @@ public class ClaseY {
 			p = p.getSiguiente();
 		p.setSiguiente(nodo);
 	}
-	
 
 	public void insertarNodoInicio(int info) {
 		if (listaVacia()) {
@@ -43,17 +42,17 @@ public class ClaseY {
 			this.cabeza = this.nodo;
 		}
 	}
-	
+
 	public void insertarNodoEntreNodos(int info, int n1, int n2) {
-		Nodo p,q = this.cabeza;
+		Nodo p, q = this.cabeza;
 		p = buscarInfoLista(n1);
 		q = buscarInfoLista(n2);
 		crearNodo(info);
-		while (p.getSiguiente() != null)
-			p = p.getSiguiente();
-		p.setSiguiente(nodo);
+		if (p != null && q != null) {
+			p.setSiguiente(this.nodo);
+			this.nodo.setSiguiente(q);
+		}
 	}
-	
 
 	public boolean listaVacia() {
 		if (cabeza == null)
@@ -64,16 +63,10 @@ public class ClaseY {
 
 	public Nodo buscarInfoLista(int info) {
 		Nodo p = this.cabeza;
-		Nodo q = null;
 		while (p != null && p.getInfo() != info) {
 			p = p.getSiguiente();
 		}
-		if (p != null && p.getInfo() == info) {
-			q = new Nodo();
-			q.setInfo(info);
-			q.setSiguiente(null);
-		}
-		return q;
+		return p;
 	}
 
 	public Nodo removerNodo(int info) {

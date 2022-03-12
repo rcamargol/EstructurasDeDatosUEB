@@ -27,8 +27,9 @@ public class View {
 			System.out.println("Lista vacia");
 		else
 			while (nodo != null) {
-				System.out.println("Nodo:" + ++i + " Info:" + nodo.getInfo());
+				System.out.print("(" + nodo.getInfo()+")-->");
 				nodo = nodo.getSiguiente();
 			}
+			System.out.println();
 	}
 }
