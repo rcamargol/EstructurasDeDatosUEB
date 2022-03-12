@@ -39,6 +39,9 @@ public class Controller {
 		System.out.println("Eliminar 99");
 		System.out.println(m.getY().removerNodo(99));
 		gui.mostrarLista(m.getY().getCabeza());
+		System.out.println("Eliminar -300");
+		System.out.println(m.getY().removerNodo(-300));
+		gui.mostrarLista(m.getY().getCabeza());
 
 	}
 }
