@@ -39,6 +39,7 @@ public class ClaseY {
 			crearLista(info);
 		} else {
 			crearNodo(info);
+			this.nodo.setSiguiente(cabeza);
 			this.cabeza = this.nodo;
 		}
 	}

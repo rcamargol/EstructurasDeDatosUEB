@@ -17,8 +17,8 @@ public class Controller {
 	public void funcionar() {
 		if (m.getY().listaVacia())
 			m.getY().crearLista(-1);
-		for (int i = 0; i < 5; i++) {
-			m.getY().insertarNodoFinal(i * 2);
+		for (int i = 0; i < 3; i++) {
+			m.getY().insertarNodoFinal(i+1);
 		}
 		gui.mostrarLista(m.getY().getCabeza());
 		System.out.println("busqueda");
