@@ -29,8 +29,8 @@ public class Controller {
 		System.out.println("Insertar 67 al final");
 		m.getY().insertarNodoFinal(67);
 		gui.mostrarLista(m.getY().getCabeza());
-		System.out.println("Insertar 79 entre 2 y 3");
-		m.getY().insertarNodoEntreNodos(79, 2, 3);
+		System.out.println("Insertar 79 entre 3 y 67");
+		m.getY().insertarNodoEntreNodos(79, 3, 67);
 		gui.mostrarLista(m.getY().getCabeza());
 	}
 }

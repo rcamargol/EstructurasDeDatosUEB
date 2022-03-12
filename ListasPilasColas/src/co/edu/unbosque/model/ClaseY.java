@@ -62,7 +62,9 @@ public class ClaseY {
 	}
 
 	public Nodo buscarInfoLista(int info) {
-		Nodo p = this.cabeza;
+		Nodo p = null;
+		if(!listaVacia())
+			p = this.cabeza;
 		while (p != null && p.getInfo() != info) {
 			p = p.getSiguiente();
 		}
