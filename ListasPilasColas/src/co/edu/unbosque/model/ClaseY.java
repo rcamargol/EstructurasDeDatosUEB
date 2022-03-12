@@ -63,7 +63,7 @@ public class ClaseY {
 
 	public Nodo buscarInfoLista(int info) {
 		Nodo p = null;
-		if(!listaVacia())
+		if (!listaVacia())
 			p = this.cabeza;
 		while (p != null && p.getInfo() != info) {
 			p = p.getSiguiente();
@@ -72,23 +72,23 @@ public class ClaseY {
 	}
 
 	public int removerNodo(int info) {
-		Nodo p,q;
+		Nodo p, q;
 		if (!listaVacia()) { // lista no es vacia
 			p = buscarInfoLista(info);
 			if (p != null) { // el nodo está en la lista
-				if (p == this.cabeza) {//el nodo está en la cabeza
+				if (p == this.cabeza) {// el nodo está en la cabeza
 					this.cabeza = p.getSiguiente();
-				}
-				else {
+				} else {
 					q = this.cabeza;
-					while(q.getSiguiente() != p) {
+					while (q.getSiguiente() != p) {
 						q = q.getSiguiente();
 					}
 					q.setSiguiente(p.getSiguiente());
 				}
-			}
+			} else
+				return -1;
 		}
-		return -1;
+		return 1;
 	}
 
 	public Nodo getNodo() {

@@ -36,6 +36,9 @@ public class Controller {
 		gui.mostrarLista(m.getY().getCabeza());
 		System.out.println("busqueda de 67");
 		gui.mostrarLista(m.getY().buscarInfoLista(67));
+		System.out.println("Eliminar 99");
+		System.out.println(m.getY().removerNodo(99));
+		gui.mostrarLista(m.getY().getCabeza());
 
 	}
 }
