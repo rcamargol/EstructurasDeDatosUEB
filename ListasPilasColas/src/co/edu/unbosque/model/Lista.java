@@ -1,10 +1,10 @@
 package co.edu.unbosque.model;
 
 public class Lista {
-	
+
 	private Nodo nodo;
 	private Nodo cabeza;
-	
+
 	public void crearNodo(int info) {
 		this.nodo = new Nodo();
 		this.nodo.setInfo(info);
@@ -81,49 +81,92 @@ public class Lista {
 		}
 		return 1;
 	}
-	
+
 	public void insertarListaOrdenada(int info) {
-		Nodo p,q;
+		Nodo p, q;
 		boolean encontro = false;
-		if(listaVacia()) {//lista está vacia?
+		if (listaVacia()) {// lista está vacia?
 			crearLista(info);
-		}
-		else {
-			if (this.cabeza.getSiguiente() == null) {//un solo nodo?
-				if(this.cabeza.getInfo() < info) {
+		} else {
+			if (this.cabeza.getSiguiente() == null) {// un solo nodo?
+				if (this.cabeza.getInfo() < info) {
 					insertarNodoFinal(info);
-				}
-				else {
+				} else {
 					insertarNodoInicio(info);
 				}
-			}
-			else { //dos o más nodos en la lista
+			} else { // dos o más nodos en la lista
 				p = null;
 				q = this.cabeza;
 				while (q != null && !encontro) {
 					if (info > q.getInfo()) {
 						p = q;
 						q = q.getSiguiente();
-					}
-					else encontro = true;
+					} else
+						encontro = true;
 				}
-				if(encontro) { //info es menor que un numero de la lista
-					if (p == null) { //el menor esta al inicio
+				if (encontro) { // info es menor que un numero de la lista
+					if (p == null) { // el menor esta al inicio
 						insertarNodoInicio(info);
-					}
-					else {
+					} else {
 						insertarNodoEntreNodos(info, p.getInfo(), q.getInfo());
 					}
-				}
-				else {//el menor está al final
+				} else {// el menor está al final
 					insertarNodoFinal(info);
 				}
 			}
 		}
 	}
-	
-	
-	//getters y setters
+
+	public void insertarListaOrdenada(int info, int modo) {
+		Nodo p, q;
+		boolean comparacion1, comparacion2, encontro;
+		comparacion1 = comparacion2 = encontro = false;
+
+		if (listaVacia()) {// lista está vacia?
+			crearLista(info);
+		} else {
+			if (this.cabeza.getSiguiente() == null) {// un solo nodo?
+
+				if (modo == 1)
+					comparacion1 = this.cabeza.getInfo() < info;
+				else
+					comparacion1 = this.cabeza.getInfo() > info;
+
+				if (comparacion1) {// comparacion1
+					insertarNodoFinal(info);
+				} else {
+					insertarNodoInicio(info);
+				}
+			} else { // dos o más nodos en la lista
+				p = null;
+				q = this.cabeza;
+
+				while (q != null && !encontro) {
+					if (modo == 1)
+						comparacion2 = info > q.getInfo();
+					else
+						comparacion2 = info < q.getInfo();
+
+					if (comparacion2) {// comparacion2
+						p = q;
+						q = q.getSiguiente();
+					} else
+						encontro = true;
+				}
+				if (encontro) { // info es menor que un numero de la lista
+					if (p == null) { // el menor esta al inicio
+						insertarNodoInicio(info);
+					} else {
+						insertarNodoEntreNodos(info, p.getInfo(), q.getInfo());
+					}
+				} else {// el menor está al final
+					insertarNodoFinal(info);
+				}
+			}
+		}
+	}
+
+	// getters y setters
 	public Nodo getNodo() {
 		return nodo;
 	}
@@ -141,4 +184,3 @@ public class Lista {
 	}
 
 }
-

@@ -47,9 +47,9 @@ public class Controller {
 	}
 	
 	public void probarListaOrdenada() {
-		int [] numeros = {7,3,8,1,10,4,2,2,40};
-		for (int i = numeros.length - 1 ; i>=0  ; i--) {
-			m.getL().insertarListaOrdenada(numeros[i]);
+		int [] numeros = {7,3,8,1,40,10,4,2,-1};
+		for (int i = 0 ; i< numeros.length ; i++) {
+			m.getL().insertarListaOrdenada(numeros[i],2);
 			gui.mostrarLista(m.getL().getCabeza());
 		}
 	}
