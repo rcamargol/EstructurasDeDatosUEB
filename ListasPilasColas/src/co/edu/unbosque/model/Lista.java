@@ -108,14 +108,14 @@ public class Lista {
 					else encontro = true;
 				}
 				if(encontro) { //info es menor que un numero de la lista
-					if (p == null) {
+					if (p == null) { //el menor esta al inicio
 						insertarNodoInicio(info);
 					}
 					else {
 						insertarNodoEntreNodos(info, p.getInfo(), q.getInfo());
 					}
 				}
-				else {
+				else {//el menor está al final
 					insertarNodoFinal(info);
 				}
 			}
