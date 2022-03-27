@@ -156,6 +156,13 @@ public class Lista {
 			}
 		}
 	}
+	
+	public void invertirLista() {
+		Nodo p,q,aux;
+		
+		p = this.cabeza;
+		
+	}
 	// getters y setters
 	public Nodo getNodo() {
 		return nodo;
