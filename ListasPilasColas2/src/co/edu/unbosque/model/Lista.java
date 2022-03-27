@@ -187,7 +187,7 @@ public class Lista {
 	}
 
 	public Nodo invertirListaRecursiva(Nodo p, Nodo q) {
-		Nodo aux;
+		Nodo aux, r=null;
 		// p = this.cabeza;
 		//q = p.getSiguiente();
 		//p.setSiguiente(null);
@@ -197,10 +197,10 @@ public class Lista {
 			p = q;
 			q = aux;
 			System.out.println(">>> "+p.getInfo());
-			invertirListaRecursiva(p,q);
+			r = invertirListaRecursiva(p,q);
 		} 
 		else
-			return p;
+			return r;
 		return null;
 	}
 
