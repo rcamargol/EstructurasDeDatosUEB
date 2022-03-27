@@ -97,7 +97,8 @@ public class Controller {
 		}
 		System.out.println("Original");
 		gui.mostrarLista(m.getL().getCabeza());
-		m.getL().invertirLista();
+		//m.getL().invertirLista();
+		m.getL().invertirListaRecursiva(m.getL().getCabeza());
 		System.out.println("Invertida");
 		gui.mostrarLista(m.getL().getCabeza());
 	}

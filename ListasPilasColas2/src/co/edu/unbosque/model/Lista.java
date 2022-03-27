@@ -185,6 +185,24 @@ public class Lista {
 			this.cabeza = p;
 		}
 	}
+	
+	public void invertirListaRecursiva(Nodo p) {
+		Nodo q, aux;
+		if (!listaVacia()) {
+			//p = this.cabeza;
+			q = p.getSiguiente();
+			p.setSiguiente(null);
+			if (q != null) {
+				aux = q.getSiguiente();
+				q.setSiguiente(p);
+				p = q;
+				q = aux;
+				invertirListaRecursiva(p);
+			} 
+			else
+				this.cabeza = p;
+		}
+	}
 
 	// getters y setters
 	public Nodo getNodo() {
