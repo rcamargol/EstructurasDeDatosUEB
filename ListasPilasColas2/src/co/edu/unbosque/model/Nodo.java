@@ -1,6 +1,7 @@
 package co.edu.unbosque.model;
 
 public class Nodo {
+	//comentario para nodo
 	private int info;
 	private Nodo siguiente;
 	 
