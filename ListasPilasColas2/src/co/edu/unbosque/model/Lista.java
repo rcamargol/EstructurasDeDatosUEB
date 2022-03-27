@@ -11,15 +11,18 @@ public class Lista {
 		else
 			return false;
 	}
+
 	public void crearNodo(int info) {
 		this.nodo = new Nodo();
 		this.nodo.setInfo(info);
 		this.nodo.setSiguiente(null);
 	}
+
 	public void crearLista(int info) {
 		crearNodo(info);
 		this.cabeza = this.nodo;
 	}
+
 	public void insertarNodoFinal(int info) {
 		Nodo p = this.cabeza;
 		crearNodo(info);
@@ -27,6 +30,7 @@ public class Lista {
 			p = p.getSiguiente();
 		p.setSiguiente(nodo);
 	}
+
 	public void insertarNodoInicio(int info) {
 		if (listaVacia()) {
 			crearLista(info);
@@ -36,6 +40,7 @@ public class Lista {
 			this.cabeza = this.nodo;
 		}
 	}
+
 	public Nodo buscarInfoLista(int info) {
 		Nodo p = null;
 		if (!listaVacia())
@@ -45,6 +50,7 @@ public class Lista {
 		}
 		return p;
 	}
+
 	public void insertarNodoEntreNodos(int info, int n1, int n2) {
 		Nodo p, q = this.cabeza;
 		p = buscarInfoLista(n1);
@@ -55,6 +61,7 @@ public class Lista {
 			this.nodo.setSiguiente(q);
 		}
 	}
+
 	public int removerNodo(int info) {
 		Nodo p, q;
 		if (!listaVacia()) { // lista no es vacia
@@ -74,6 +81,7 @@ public class Lista {
 		}
 		return 1;
 	}
+
 	public void insertarListaOrdenada(int info) {
 		Nodo p, q;
 		boolean encontro = false;
@@ -108,6 +116,7 @@ public class Lista {
 			}
 		}
 	}
+
 	public void insertarListaOrdenada(int info, int modo) {
 		Nodo p, q;
 		boolean comparacion1, comparacion2, encontro;
@@ -156,23 +165,36 @@ public class Lista {
 			}
 		}
 	}
-	
+
 	public void invertirLista() {
-		Nodo p,q,aux;
-		
-		p = this.cabeza;
-		
+		Nodo p, q, aux;
+		if (!listaVacia()) {
+			p = this.cabeza;
+			q = p.getSiguiente();
+			p.setSiguiente(null);
+			while (p != null) {
+				aux = q.getSiguiente();
+				q.setSiguiente(p);
+				p = q;
+				q = aux;
+			}
+			this.cabeza = p;
+		}
 	}
+
 	// getters y setters
 	public Nodo getNodo() {
 		return nodo;
 	}
+
 	public void setNodo(Nodo nodo) {
 		this.nodo = nodo;
 	}
+
 	public Nodo getCabeza() {
 		return cabeza;
 	}
+
 	public void setCabeza(Nodo cabeza) {
 		this.cabeza = cabeza;
 	}
