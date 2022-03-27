@@ -91,15 +91,15 @@ public class Controller {
 	}
 	
 	public void probarListaInvertida() {
-		int [] numeros = {7,3,8,1,40,10,4,2,-1};
+		int [] numeros = {7,3,8};
 		for (int i = 0 ; i< numeros.length ; i++) {
 			m.getL().insertarNodoFinal(numeros[i]);
 		}
 		System.out.println("Original");
 		gui.mostrarLista(m.getL().getCabeza());
 		//m.getL().invertirLista();
-		m.getL().invertirListaRecursiva(m.getL().getCabeza());
+		m.getL().invertirListaRecursiva(m.getL().getCabeza(),m.getL().getCabeza().getSiguiente());
 		System.out.println("Invertida");
-		gui.mostrarLista(m.getL().getCabeza());
+		//gui.mostrarLista(m.getL().getCabeza());
 	}
 }
