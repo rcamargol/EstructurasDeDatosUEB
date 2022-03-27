@@ -14,7 +14,8 @@ public class Controller {
 		//funcionar();
 		//probarListaOrdenada();
 		//probarPila();
-		probarCola();
+		//probarCola();
+		probarListaInvertida();
 	}
 
 	public void funcionar() {
@@ -92,8 +93,12 @@ public class Controller {
 	public void probarListaInvertida() {
 		int [] numeros = {7,3,8,1,40,10,4,2,-1};
 		for (int i = 0 ; i< numeros.length ; i++) {
-			m.getL().insertarListaOrdenada(numeros[i],2);
-			gui.mostrarLista(m.getL().getCabeza());
+			m.getL().insertarNodoFinal(numeros[i]);
 		}
+		System.out.println("Original");
+		gui.mostrarLista(m.getL().getCabeza());
+		m.getL().invertirLista();
+		System.out.println("Invertida");
+		gui.mostrarLista(m.getL().getCabeza());
 	}
 }

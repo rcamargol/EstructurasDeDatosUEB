@@ -24,11 +24,15 @@ public class Lista {
 	}
 
 	public void insertarNodoFinal(int info) {
-		Nodo p = this.cabeza;
-		crearNodo(info);
-		while (p.getSiguiente() != null)
-			p = p.getSiguiente();
-		p.setSiguiente(nodo);
+		if (listaVacia()) {
+			crearLista(info);
+		} else {
+			Nodo p = this.cabeza;
+			crearNodo(info);
+			while (p.getSiguiente() != null)
+				p = p.getSiguiente();
+			p.setSiguiente(nodo);
+		}
 	}
 
 	public void insertarNodoInicio(int info) {
@@ -172,7 +176,7 @@ public class Lista {
 			p = this.cabeza;
 			q = p.getSiguiente();
 			p.setSiguiente(null);
-			while (p != null) {
+			while (q != null) {
 				aux = q.getSiguiente();
 				q.setSiguiente(p);
 				p = q;
