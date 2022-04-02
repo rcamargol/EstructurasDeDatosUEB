@@ -1,5 +1,5 @@
 package co.edu.unbosque.model;
-
+//https://aulaenlanube.com/zona-programacion/java/ejercicios-recursividad-java/
 public class ClaseX {
 	ClaseY y;
 	Lista l;
