@@ -6,14 +6,15 @@ public class Busqueda {
 
 	public Busqueda() {
 		a = new int[5];
+		inicializarArray();
 	}
 
 	public static void inicializarArray() {
-		a[0] = 36;
-		a[1] = 24;
-		a[2] = 10;
-		a[3] = 6;
-		a[4] = 12;
+		a[0] = 6;
+		a[1] = 10;
+		a[2] = 12;
+		a[3] = 24;
+		a[4] = 36;
 	}
 
 	public int busquedaSecuencial(int elemento) {
@@ -43,21 +44,23 @@ public class Busqueda {
 		return -1; 
 	}
 	
-	public int busquedaBinariaRecursiva(int elemento, int bajo, int alto) {
-		int central;
-		int valorCentral;
+	public int busquedaBinariaRecursiva(int elemento) {
+		return busquedaBinariaRec(elemento, 0, a.length-1);
+	}
+	
+	private int busquedaBinariaRec(int elemento, int bajo, int alto) {
+		int central=-1;
+		int posicion=-1;;
 		if (bajo <= alto) {
 			central = (bajo + alto) / 2; 
-			valorCentral = a[central]; 
-			if (elemento == valorCentral)
-				return central; 
-			else if (elemento < valorCentral)
-				//alto = central - 1; 
-				busquedaBinariaRecursiva(elemento, bajo, central - 1);
+			if (elemento == a[central]) {
+				posicion = central; 
+			}
+			else if (elemento < a[central])
+				posicion = busquedaBinariaRec(elemento, bajo, central - 1);
 			else
-				//bajo = central + 1;
-				busquedaBinariaRecursiva(elemento, central + 1, alto);
+				posicion = busquedaBinariaRec(elemento, central + 1, alto);
 		}
-		return -1; 
+		return posicion; 
 	}
 }

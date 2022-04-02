@@ -18,10 +18,12 @@ public class Controller {
 	
 	public void funcionar() {
 		//gui.mostrarResultados("Busqueda normal:"+m.getB().busquedaBinaria(6));
-		//gui.mostrarResultados("Busqueda Recursiva:"+m.getB().busquedaBinariaRecursiva(6,0,4));
+		gui.mostrarResultados("Busqueda Recursiva:"+m.getB().busquedaBinariaRecursiva(10));
+		//m.getB().busquedaBinariaRecursiva(54);
 		//gui.mostrarResultados("Fact normal:"+m.calcularFactorial(5));
 		//gui.mostrarResultados("Fact Recursivo:"+m.calcularFactorialRecursivo(5));
-		gui.mostrarResultados("Ejer Recursivo:"+m.sumarNumerosRec(5));
+		//gui.mostrarResultados("Ejer Recursivo:"+m.sumarNumerosRec(5));
+		//m.imprimirDigitosRec(3);
 	}
 	
 	public void probarListaInvertida() {
@@ -36,4 +38,5 @@ public class Controller {
 		System.out.println("Invertida");
 		//gui.mostrarLista(m.getL().getCabeza());
 	}
+	
 }

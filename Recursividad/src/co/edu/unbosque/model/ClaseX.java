@@ -12,7 +12,7 @@ public class ClaseX {
 
 	public int calcularFactorial(int n) {
 		int fact = -1;
-		if (n == 0)
+		if (n == 0) 
 			fact = 1;
 		else {
 			for (int i = 1; i <= n; i++) {
@@ -40,6 +40,13 @@ public class ClaseX {
 		else 
 			suma = 1;
 		return suma;
+	}
+	
+	public void imprimirDigitosRec(int n) {
+		if(n > 1)
+			imprimirDigitosRec(n-1);
+		System.out.print("Pila: imprimirDigitosRec(int "+n+")-->");
+		System.out.println(n);
 	}
 	
 	public ClaseY getY() {
