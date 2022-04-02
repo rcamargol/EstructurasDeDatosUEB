@@ -35,7 +35,7 @@ public class ClaseX {
 	public int sumarNumerosRec(int n) {
 		int suma = 0;
 		if(n > 1){
-		 	suma = suma + sumarNumerosRec(n-1);
+		 	suma = n + sumarNumerosRec(n-1);
 		}
 		else 
 			suma = 1;
