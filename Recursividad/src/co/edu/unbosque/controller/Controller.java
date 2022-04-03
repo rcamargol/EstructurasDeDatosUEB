@@ -24,7 +24,8 @@ public class Controller {
 		//gui.mostrarResultados("Fact Recursivo:"+m.calcularFactorialRecursivo(5));
 		//gui.mostrarResultados("Ejer Recursivo:"+m.sumarNumerosRec(5));
 		//m.imprimirDigitosRec(3);
-		m.generarFiboRec(10);
+		//gui.mostrarResultados("Numero fibo:"+m.generarFiboRec(3));
+		gui.mostrarResultados("Potencia Rec:"+m.elevarRec(5,1));
 	}
 	
 	public void probarListaInvertida() {
