@@ -185,6 +185,9 @@ public class Lista {
 			this.cabeza = p;
 		}
 	}
+	public Nodo invertirListaRec() {
+		return null;
+	}
 
 	public Nodo invertirListaRecursiva(Nodo p, Nodo q) {
 		Nodo aux, r=null;
