@@ -216,13 +216,11 @@ public class Lista {
 		return suma;
 	}
 
-	// public int contarNodosRec(Nodo nodo, int n) {
 	public int contarNodosRec(Nodo nodo) {
 		int suma = 1;
 		if (nodo == null)
 			suma = 0;
 		else if (nodo.getSiguiente() != null) {
-			// suma=n+contarNodosRec(nodo.getSiguiente(),1);
 			suma += contarNodosRec(nodo.getSiguiente());
 			System.out.println("Cuenta:" + suma);
 		}
