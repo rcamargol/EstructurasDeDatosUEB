@@ -42,6 +42,7 @@ public class Controller {
 		gui.mostrarListaRec(m.getL().getCabeza());
 		System.out.println();
 		System.out.println("contar ReC:"+m.getL().contarNodosRec(m.getL().getCabeza()));
+		//m.getL().contarNodosRec(m.getL().getCabeza());
 	}
 	
 }

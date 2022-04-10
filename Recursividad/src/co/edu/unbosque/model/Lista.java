@@ -210,12 +210,10 @@ public class Lista {
 	public int contarNodosRec(Nodo nodo) {
 		int suma=0;
 		if(nodo != null) {
-			suma = suma + contarNodosRec(nodo.getSiguiente());
+			suma=nodo.getInfo()+contarNodosRec(nodo.getSiguiente());
 			System.out.println("Valor de suma:"+ suma);
 		}
-		else 
-			suma = 1;
-		return suma;	
+		return suma;
 	}
 
 	// getters y setters
