@@ -41,7 +41,7 @@ public class Controller {
 		System.out.println("Recursiva");
 		gui.mostrarListaRec(m.getL().getCabeza());
 		System.out.println();
-		System.out.println("contar ReC:"+m.getL().contarNodosRec(m.getL().getCabeza()));
+		System.out.println("contar ReC:"+m.getL().contarNodosRec(m.getL().getCabeza(),1));
 		//m.getL().contarNodosRec(m.getL().getCabeza());
 	}
 	

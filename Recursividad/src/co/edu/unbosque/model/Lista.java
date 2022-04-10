@@ -215,6 +215,15 @@ public class Lista {
 		}
 		return suma;
 	}
+	
+	public int contarNodosRec(Nodo nodo, int n) {
+		int suma=0;
+		if(nodo != null) {
+			suma=n+contarNodosRec(nodo.getSiguiente(),1);
+			System.out.println("Valor de suma:"+ suma);
+		}
+		return suma;
+	}
 
 	// getters y setters
 	public Nodo getNodo() {
