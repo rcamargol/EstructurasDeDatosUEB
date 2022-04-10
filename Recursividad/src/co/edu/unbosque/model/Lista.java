@@ -207,20 +207,22 @@ public class Lista {
 		return null;
 	}
 	
-	public int contarNodosRec(Nodo nodo) {
+	public int sumarInfoRec(Nodo nodo) {
 		int suma=0;
 		if(nodo != null) {
-			suma=nodo.getInfo()+contarNodosRec(nodo.getSiguiente());
-			System.out.println("Valor de suma:"+ suma);
+			suma=nodo.getInfo()+sumarInfoRec(nodo.getSiguiente());
+			//System.out.println("Suma:"+ suma);
 		}
 		return suma;
 	}
 	
-	public int contarNodosRec(Nodo nodo, int n) {
-		int suma=0;
-		if(nodo != null) {
-			suma=n+contarNodosRec(nodo.getSiguiente(),1);
-			System.out.println("Valor de suma:"+ suma);
+	//public int contarNodosRec(Nodo nodo, int n) {
+	public int contarNodosRec(Nodo nodo) {
+		int suma=1;
+		if(nodo.getSiguiente() != null) {
+			//suma=n+contarNodosRec(nodo.getSiguiente(),1);
+			suma+=contarNodosRec(nodo.getSiguiente());
+			System.out.println("Cuenta:"+ suma);
 		}
 		return suma;
 	}
