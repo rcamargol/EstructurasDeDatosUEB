@@ -186,25 +186,24 @@ public class Lista {
 		}
 	}
 
-	public Nodo invertirListaRec() {
-		return null;
+	public void invertirListaRec() {
+		this.cabeza = invertirListaRecursiva(this.cabeza, this.cabeza.getSiguiente());
+		System.out.println("invertirListaRec()");
 	}
 
 	public Nodo invertirListaRecursiva(Nodo p, Nodo q) {
 		Nodo aux, r = null;
-		// p = this.cabeza;
-		// q = p.getSiguiente();
-		// p.setSiguiente(null);
+		//q = p.getSiguiente();
 		if (q != null) {
 			aux = q.getSiguiente();
 			q.setSiguiente(p);
 			p = q;
 			q = aux;
 			System.out.println(">>> " + p.getInfo());
-			r = invertirListaRecursiva(p, q);
+			r = invertirListaRecursiva(p,q);
 		} else
-			return r;
-		return null;
+			r = p;
+		return r;
 	}
 
 	public int sumarInfoRec(Nodo nodo) {
