@@ -32,4 +32,10 @@ public class View {
 			}
 			System.out.println();
 	}
+	
+	public void mostrarListaRec(Nodo nodo) {
+		if(nodo.getSiguiente() != null)
+			mostrarListaRec(nodo.getSiguiente());
+		System.out.print("(" + nodo.getInfo()+")-->");
+	}
 }

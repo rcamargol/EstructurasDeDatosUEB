@@ -11,8 +11,9 @@ public class Controller {
 	public Controller() {
 		m = new ClaseX();
 		gui = new View();
-		funcionar();
+		//funcionar();
 		//probarListaInvertida();
+		probarImprimirListaRec();
 	}
 
 	
@@ -25,20 +26,22 @@ public class Controller {
 		//gui.mostrarResultados("Ejer Recursivo:"+m.sumarNumerosRec(5));
 		//m.imprimirDigitosRec(3);
 		//gui.mostrarResultados("Numero fibo:"+m.generarFiboRec(3));
-		gui.mostrarResultados("Potencia Rec:"+m.elevarRec(5,1));
+		gui.mostrarResultados("Potencia Rec:"+m.elevarRec(5,4));
 	}
 	
-	public void probarListaInvertida() {
-		int [] numeros = {7,3,8};
+	public void probarImprimirListaRec() {
+		int [] numeros = {7,3,8,5};
 		for (int i = 0 ; i< numeros.length ; i++) {
 			m.getL().insertarNodoFinal(numeros[i]);
 		}
 		System.out.println("Original");
 		gui.mostrarLista(m.getL().getCabeza());
 		//m.getL().invertirLista();
-		m.getL().invertirListaRecursiva(m.getL().getCabeza(),m.getL().getCabeza().getSiguiente());
-		System.out.println("Invertida");
-		//gui.mostrarLista(m.getL().getCabeza());
+		//m.getL().invertirListaRecursiva(m.getL().getCabeza(),m.getL().getCabeza().getSiguiente());
+		System.out.println("Recursiva");
+		gui.mostrarListaRec(m.getL().getCabeza());
+		System.out.println();
+		System.out.println("contar ReC:"+m.getL().contarNodosRec(m.getL().getCabeza()));
 	}
 	
 }

@@ -8,6 +8,7 @@ public class ClaseX {
 
 	public ClaseX() {
 		y = new ClaseY();
+		l = new Lista();
 		b = new Busqueda();
 	}
 
