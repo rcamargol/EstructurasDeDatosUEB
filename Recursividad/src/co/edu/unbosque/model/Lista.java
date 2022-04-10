@@ -185,44 +185,46 @@ public class Lista {
 			this.cabeza = p;
 		}
 	}
+
 	public Nodo invertirListaRec() {
 		return null;
 	}
 
 	public Nodo invertirListaRecursiva(Nodo p, Nodo q) {
-		Nodo aux, r=null;
+		Nodo aux, r = null;
 		// p = this.cabeza;
-		//q = p.getSiguiente();
-		//p.setSiguiente(null);
+		// q = p.getSiguiente();
+		// p.setSiguiente(null);
 		if (q != null) {
 			aux = q.getSiguiente();
 			q.setSiguiente(p);
 			p = q;
 			q = aux;
-			System.out.println(">>> "+p.getInfo());
-			r = invertirListaRecursiva(p,q);
-		} 
-		else
+			System.out.println(">>> " + p.getInfo());
+			r = invertirListaRecursiva(p, q);
+		} else
 			return r;
 		return null;
 	}
-	
+
 	public int sumarInfoRec(Nodo nodo) {
-		int suma=0;
-		if(nodo != null) {
-			suma=nodo.getInfo()+sumarInfoRec(nodo.getSiguiente());
-			//System.out.println("Suma:"+ suma);
+		int suma = 0;
+		if (nodo != null) {
+			suma = nodo.getInfo() + sumarInfoRec(nodo.getSiguiente());
+			// System.out.println("Suma:"+ suma);
 		}
 		return suma;
 	}
-	
-	//public int contarNodosRec(Nodo nodo, int n) {
+
+	// public int contarNodosRec(Nodo nodo, int n) {
 	public int contarNodosRec(Nodo nodo) {
-		int suma=1;
-		if(nodo.getSiguiente() != null) {
-			//suma=n+contarNodosRec(nodo.getSiguiente(),1);
-			suma+=contarNodosRec(nodo.getSiguiente());
-			System.out.println("Cuenta:"+ suma);
+		int suma = 1;
+		if (nodo == null)
+			suma = 0;
+		else if (nodo.getSiguiente() != null) {
+			// suma=n+contarNodosRec(nodo.getSiguiente(),1);
+			suma += contarNodosRec(nodo.getSiguiente());
+			System.out.println("Cuenta:" + suma);
 		}
 		return suma;
 	}
