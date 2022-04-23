@@ -8,13 +8,13 @@ public class ArbolBinario {
 		this.raiz = null;
 	}
 	
-	public Nodo crearArbol(int info) {
-		this.raiz = new Nodo(info);
-		return raiz;
-	}
-	
-	boolean arbolVacio() {
+	public boolean arbolVacio() {
 		return this.raiz == null;
+	}
+	public Nodo crearArbol(Nodo izquierda, int info, Nodo derecha) {
+		Nodo n = new Nodo(izquierda,info,derecha);
+		this.raiz = n;
+		return this.raiz;
 	}
 
 	public Nodo getRaiz() {
