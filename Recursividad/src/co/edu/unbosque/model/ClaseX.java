@@ -71,6 +71,19 @@ public class ClaseX {
 			pot = x * elevarRec(x , y-1);
 		return pot;
 	}
+	
+	public String invertirCadena(String cad) {
+		return invertirCad(cad,cad.length());
+	}
+	
+	public String invertirCad(String cad, int pos) {
+		String letra;
+		if (pos > 0)
+			letra = cad.substring(pos);
+		else
+			letra = "";
+		return letra;
+	}
 
 	public ClaseY getY() {
 		return y;
