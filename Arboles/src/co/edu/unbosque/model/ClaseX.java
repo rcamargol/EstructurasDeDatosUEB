@@ -17,11 +17,24 @@ public class ClaseX {
 		return dato+20;
 	}
 	
-	public Nodo crearArbol(Nodo izquierda, int info, Nodo derecha) {
-		if(ab.arbolVacio())
-			ab.crearArbol(izquierda, info, derecha);
-		return ab.getRaiz();
+	public void crearArbol() {
+		Nodo a, a1, a2;
+		Pila p = new Pila();
+		a1 = ab.nuevoArbol(null, 5, null);
+		a2 = ab.nuevoArbol(null, 8, null);
+		a = ab.nuevoArbol(a1, 2, a2);
+		p.hacerPUSH(a);
+		a1 = ab.nuevoArbol(null, 7, null);
+		a2 = ab.nuevoArbol(null, 10, null);
+		a = ab.nuevoArbol(a1, 6, a2);
+		p.hacerPUSH(a);
+		a2 = (Nodo)p.hacerPEEK();
+		p.hacerPOP();
+		a1 = (Nodo)p.hacerPEEK();
+		p.hacerPOP();
+		a = ab.nuevoArbol(a1, 3, a2);
 	}
+	
 	
 	public ArbolBinario getAb() {
 		return ab;
