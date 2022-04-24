@@ -11,11 +11,11 @@ public class Controller {
 	public Controller() {
 		m = new ClaseX();
 		gui = new View();
-		gui.mostrarResultados(m.procesarDato(gui.pedirDato()));
+		//gui.mostrarResultados(m.procesarDato(gui.pedirDato()));
 		funcionar();
 	}
 	
 	public void funcionar() {
-		
+		gui.mostrarPreorden(m.crearArbol());
 	}
 }
