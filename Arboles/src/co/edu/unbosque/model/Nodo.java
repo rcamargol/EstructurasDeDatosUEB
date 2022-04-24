@@ -1,7 +1,7 @@
 package co.edu.unbosque.model;
 
 public class Nodo {
-	private int info;
+	private Object info;
 	private Nodo derecha;
 	private Nodo izquierda;
 	
@@ -17,7 +17,7 @@ public class Nodo {
 		this.setDerecha(derecha);
 	}
 	
-	public int getInfo() {
+	public Object getInfo() {
 		return info;
 	}
 	public void setInfo(int info) {

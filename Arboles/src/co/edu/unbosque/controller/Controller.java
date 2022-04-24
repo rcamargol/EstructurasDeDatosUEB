@@ -17,5 +17,7 @@ public class Controller {
 	
 	public void funcionar() {
 		gui.mostrarPreorden(m.crearArbol());
+		gui.mostrarInorden(m.crearArbol());
+		gui.mostrarPosorden(m.crearArbol());
 	}
 }
