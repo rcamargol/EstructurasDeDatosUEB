@@ -2,6 +2,8 @@ package co.edu.unbosque.view;
 
 import javax.swing.JOptionPane;
 
+import co.edu.unbosque.model.Nodo;
+
 public class View {
 	
 	public void mostrarResultados(String dato) {
@@ -19,4 +21,13 @@ public class View {
 		numero = Integer.parseInt(JOptionPane.showInputDialog(null,"Entre Nùmero:"));
 		return numero;
 	}
+	
+	public void mostrarPreorden(Nodo raiz) {
+		if(raiz != null) {
+			System.out.println(raiz.getInfo());
+			mostrarPreorden(raiz.getIzquierda());
+			mostrarPreorden(raiz.getDerecha());
+		}
+	}
+
 }

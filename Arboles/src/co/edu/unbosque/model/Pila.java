@@ -10,7 +10,7 @@ public class Pila extends Lista{
 	}
 	public Object hacerPEEK() {
 		if(super.cabeza!=null) {
-			return(super.cabeza);
+			return(super.cabeza.getInfo());
 			//fin del metodo que esta complto
 		}
 		return null;

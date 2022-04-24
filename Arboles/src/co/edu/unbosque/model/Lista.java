@@ -14,7 +14,7 @@ public class Lista {
 
 	public void crearNodo(Object info) {
 		this.nodol = new Nodol();
-		this.nodol.setInfo((int)info);
+		this.nodol.setInfo(info);
 		this.nodol.setSiguiente(null);
 	}
 
@@ -49,7 +49,7 @@ public class Lista {
 		Nodol p = null;
 		if (!listaVacia())
 			p = this.cabeza;
-		while (p != null && (int)p.getInfo() != (int)info) {
+		while (p != null && p.getInfo() != info) {
 			p = p.getSiguiente();
 		}
 		return p;

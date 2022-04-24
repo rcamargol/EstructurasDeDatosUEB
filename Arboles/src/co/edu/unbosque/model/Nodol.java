@@ -9,7 +9,7 @@ public class Nodol {
 		return info;
 	}
 	
-	public void setInfo(int info) {
+	public void setInfo(Object info) {
 		this.info = info;
 	}
 	
