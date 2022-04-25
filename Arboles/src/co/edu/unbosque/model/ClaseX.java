@@ -28,7 +28,7 @@ public class ClaseX {
 		a2 = ab.nuevoArbol(null, 10, null);
 		a = ab.nuevoArbol(a1, 6, a2);
 		p.hacerPUSH(a);
-		a2 = (Nodo) p.hacerPEEK();
+		a2 = (Nodo)p.hacerPEEK();
 		p.hacerPOP();
 		a1 = (Nodo)p.hacerPEEK();
 		p.hacerPOP();
