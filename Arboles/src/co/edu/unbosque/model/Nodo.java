@@ -17,6 +17,16 @@ public class Nodo {
 		this.setDerecha(derecha);
 	}
 	
+	public boolean tieneHijos() {
+		return this.getDerecha() != null || this.getIzquierda() != null;
+	}
+	
+	public boolean tieneHermanos() {
+		boolean tiene = false;
+
+		return tiene;	
+	}
+	
 	public Object getInfo() {
 		return info;
 	}
