@@ -2,7 +2,7 @@ package co.edu.unbosque.view;
 
 import javax.swing.JOptionPane;
 
-import co.edu.unbosque.model.Nodo;
+import co.edu.unbosque.model.NodoA;
 
 public class View {
 	
@@ -22,7 +22,7 @@ public class View {
 		return numero;
 	}
 	
-	public void mostrarPreorden(Nodo raiz) {
+	public void mostrarPreorden(NodoA raiz) {
 		if(raiz != null) {
 			System.out.print(raiz.getInfo()+" -- ");
 			mostrarPreorden(raiz.getIzquierda());
@@ -31,7 +31,7 @@ public class View {
 		System.out.println();
 	}
 	
-	public void mostrarInorden(Nodo raiz) {
+	public void mostrarInorden(NodoA raiz) {
 		if(raiz != null) {
 			mostrarInorden(raiz.getIzquierda());
 			System.out.print(raiz.getInfo()+" -- ");
@@ -39,7 +39,7 @@ public class View {
 		}
 	}
 	
-	public void mostrarPosorden(Nodo raiz) {
+	public void mostrarPosorden(NodoA raiz) {
 		if(raiz != null) {
 			mostrarPosorden(raiz.getIzquierda());
 			mostrarPosorden(raiz.getDerecha());
