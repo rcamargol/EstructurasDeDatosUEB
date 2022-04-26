@@ -8,15 +8,15 @@ public class Cola extends Lista {
 	public void decolar() {
 		super.removerNodo(getElementoFrente().getInfo());
 	}
-	public Nodol getElementoFrente() {
-		Nodol p = super.cabeza;
+	public NodoL getElementoFrente() {
+		NodoL p = super.cabeza;
 		while (p.getSiguiente() != null)
 			p = p.getSiguiente();
 		return p;
 	}
 	public int numElementosCola() {
 		int i = 0;
-		Nodol p = super.cabeza;
+		NodoL p = super.cabeza;
 		while (p != null) {
 			p = p.getSiguiente();
 			++i;
