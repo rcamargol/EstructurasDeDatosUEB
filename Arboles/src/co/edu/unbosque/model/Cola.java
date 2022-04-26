@@ -2,7 +2,7 @@ package co.edu.unbosque.model;
 
 public class Cola extends Lista {
 
-	public void encolar(int info) {
+	public void encolar(Object info) {
 		super.insertarNodoInicio(info);
 	}
 	public void decolar() {
