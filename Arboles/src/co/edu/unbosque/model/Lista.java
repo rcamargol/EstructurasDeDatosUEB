@@ -11,19 +11,16 @@ public class Lista {
 		else
 			return false;
 	}
-
 	public void crearNodo(Object info) {
 		this.NodoL = new NodoL();
 		this.NodoL.setInfo(info);
 		this.NodoL.setSiguiente(null);
 	}
-
 	public void crearLista(Object info) {
 		crearNodo(info);
 		this.cabeza = this.NodoL;
 	}
-
-	public void insertarNodoFinal(int info) {
+	public void insertarNodoFinal(Object info) {
 		if (listaVacia()) {
 			crearLista(info);
 		} else {
@@ -34,7 +31,6 @@ public class Lista {
 			p.setSiguiente(NodoL);
 		}
 	}
-
 	public void insertarNodoInicio(Object info) {
 		if (listaVacia()) {
 			crearLista(info);
@@ -44,7 +40,6 @@ public class Lista {
 			this.cabeza = this.NodoL;
 		}
 	}
-
 	public NodoL buscarInfoLista(Object info) {
 		NodoL p = null;
 		if (!listaVacia())
@@ -54,7 +49,6 @@ public class Lista {
 		}
 		return p;
 	}
-
 	public void insertarNodoEntreNodos(Object info, Object n1, Object n2) {
 		NodoL p, q = this.cabeza;
 		p = buscarInfoLista(n1);
@@ -65,7 +59,6 @@ public class Lista {
 			this.NodoL.setSiguiente(q);
 		}
 	}
-
 	public int removerNodo(Object info) {
 		NodoL p, q;
 		if (!listaVacia()) { // lista no es vacia
@@ -85,15 +78,14 @@ public class Lista {
 		}
 		return 1;
 	}
-
-	public void insertarListaOrdenada(int info) {
+	public void insertarListaOrdenada(Object info) {
 		NodoL p, q;
 		boolean encontro = false;
 		if (listaVacia()) {// lista está vacia?
 			crearLista(info);
 		} else {
 			if (this.cabeza.getSiguiente() == null) {// un solo nodo?
-				if ((int)this.cabeza.getInfo() < info) {
+				if ((int)this.cabeza.getInfo() < (int)info) {
 					insertarNodoFinal(info);
 				} else {
 					insertarNodoInicio(info);
@@ -102,7 +94,7 @@ public class Lista {
 				p = null;
 				q = this.cabeza;
 				while (q != null && !encontro) {
-					if (info > (int)q.getInfo()) {
+					if ((int)info > (int)q.getInfo()) {
 						p = q;
 						q = q.getSiguiente();
 					} else
@@ -120,7 +112,6 @@ public class Lista {
 			}
 		}
 	}
-
 	public void insertarListaOrdenada(int info, int modo) {
 		NodoL p, q;
 		boolean comparacion1, comparacion2, encontro;
@@ -169,7 +160,6 @@ public class Lista {
 			}
 		}
 	}
-
 	public void invertirLista() {
 		NodoL p, q, aux;
 		if (!listaVacia()) {
@@ -185,7 +175,6 @@ public class Lista {
 			this.cabeza = p;
 		}
 	}
-
 	public NodoL invertirListaRecursiva(NodoL p, NodoL q) {
 		NodoL aux, r=null;
 		// p = this.cabeza;
@@ -203,20 +192,16 @@ public class Lista {
 			return r;
 		return null;
 	}
-
 	// getters y setters
 	public NodoL getNodo() {
 		return NodoL;
 	}
-
 	public void setNodo(NodoL nodo) {
 		this.NodoL = nodo;
 	}
-
 	public NodoL getCabeza() {
 		return cabeza;
 	}
-
 	public void setCabeza(NodoL cabeza) {
 		this.cabeza = cabeza;
 	}
