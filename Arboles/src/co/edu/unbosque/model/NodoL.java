@@ -1,7 +1,7 @@
 package co.edu.unbosque.model;
 
 public class NodoL {
-	//comentario para nodo
+	//comentario para nodo del tipo de objeto
 	private Object info;
 	private NodoL siguiente;
 	 
