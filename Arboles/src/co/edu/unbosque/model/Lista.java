@@ -2,8 +2,8 @@ package co.edu.unbosque.model;
 
 public class Lista {
 
-	protected Nodol nodol;
-	protected Nodol cabeza;
+	protected NodoL NodoL;
+	protected NodoL cabeza;
 
 	public boolean listaVacia() {
 		if (cabeza == null)
@@ -13,25 +13,25 @@ public class Lista {
 	}
 
 	public void crearNodo(Object info) {
-		this.nodol = new Nodol();
-		this.nodol.setInfo(info);
-		this.nodol.setSiguiente(null);
+		this.NodoL = new NodoL();
+		this.NodoL.setInfo(info);
+		this.NodoL.setSiguiente(null);
 	}
 
 	public void crearLista(Object info) {
 		crearNodo(info);
-		this.cabeza = this.nodol;
+		this.cabeza = this.NodoL;
 	}
 
 	public void insertarNodoFinal(int info) {
 		if (listaVacia()) {
 			crearLista(info);
 		} else {
-			Nodol p = this.cabeza;
+			NodoL p = this.cabeza;
 			crearNodo(info);
 			while (p.getSiguiente() != null)
 				p = p.getSiguiente();
-			p.setSiguiente(nodol);
+			p.setSiguiente(NodoL);
 		}
 	}
 
@@ -40,13 +40,13 @@ public class Lista {
 			crearLista(info);
 		} else {
 			crearNodo(info);
-			this.nodol.setSiguiente(cabeza);
-			this.cabeza = this.nodol;
+			this.NodoL.setSiguiente(cabeza);
+			this.cabeza = this.NodoL;
 		}
 	}
 
-	public Nodol buscarInfoLista(Object info) {
-		Nodol p = null;
+	public NodoL buscarInfoLista(Object info) {
+		NodoL p = null;
 		if (!listaVacia())
 			p = this.cabeza;
 		while (p != null && p.getInfo() != info) {
@@ -56,18 +56,18 @@ public class Lista {
 	}
 
 	public void insertarNodoEntreNodos(Object info, Object n1, Object n2) {
-		Nodol p, q = this.cabeza;
+		NodoL p, q = this.cabeza;
 		p = buscarInfoLista(n1);
 		q = buscarInfoLista(n2);
 		crearNodo(info);
 		if (p != null && q != null) {
-			p.setSiguiente(this.nodol);
-			this.nodol.setSiguiente(q);
+			p.setSiguiente(this.NodoL);
+			this.NodoL.setSiguiente(q);
 		}
 	}
 
 	public int removerNodo(Object info) {
-		Nodol p, q;
+		NodoL p, q;
 		if (!listaVacia()) { // lista no es vacia
 			p = buscarInfoLista(info);
 			if (p != null) { // el nodo está en la lista
@@ -87,7 +87,7 @@ public class Lista {
 	}
 
 	public void insertarListaOrdenada(int info) {
-		Nodol p, q;
+		NodoL p, q;
 		boolean encontro = false;
 		if (listaVacia()) {// lista está vacia?
 			crearLista(info);
@@ -122,7 +122,7 @@ public class Lista {
 	}
 
 	public void insertarListaOrdenada(int info, int modo) {
-		Nodol p, q;
+		NodoL p, q;
 		boolean comparacion1, comparacion2, encontro;
 		comparacion1 = comparacion2 = encontro = false;
 
@@ -171,7 +171,7 @@ public class Lista {
 	}
 
 	public void invertirLista() {
-		Nodol p, q, aux;
+		NodoL p, q, aux;
 		if (!listaVacia()) {
 			p = this.cabeza;
 			q = p.getSiguiente();
@@ -186,8 +186,8 @@ public class Lista {
 		}
 	}
 
-	public Nodol invertirListaRecursiva(Nodol p, Nodol q) {
-		Nodol aux, r=null;
+	public NodoL invertirListaRecursiva(NodoL p, NodoL q) {
+		NodoL aux, r=null;
 		// p = this.cabeza;
 		//q = p.getSiguiente();
 		//p.setSiguiente(null);
@@ -205,19 +205,19 @@ public class Lista {
 	}
 
 	// getters y setters
-	public Nodol getNodo() {
-		return nodol;
+	public NodoL getNodo() {
+		return NodoL;
 	}
 
-	public void setNodo(Nodol nodo) {
-		this.nodol = nodo;
+	public void setNodo(NodoL nodo) {
+		this.NodoL = nodo;
 	}
 
-	public Nodol getCabeza() {
+	public NodoL getCabeza() {
 		return cabeza;
 	}
 
-	public void setCabeza(Nodol cabeza) {
+	public void setCabeza(NodoL cabeza) {
 		this.cabeza = cabeza;
 	}
 }

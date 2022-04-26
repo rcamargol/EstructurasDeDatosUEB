@@ -1,9 +1,9 @@
 package co.edu.unbosque.model;
 
-public class Nodol {
+public class NodoL {
 	//comentario para nodo
 	private Object info;
-	private Nodol siguiente;
+	private NodoL siguiente;
 	 
 	public Object getInfo() {
 		return info;
@@ -13,11 +13,11 @@ public class Nodol {
 		this.info = info;
 	}
 	
-	public Nodol getSiguiente() {
+	public NodoL getSiguiente() {
 		return siguiente;
 	}
 	
-	public void setSiguiente(Nodol siguiente) {
+	public void setSiguiente(NodoL siguiente) {
 		this.siguiente = siguiente;
 	}
 	
