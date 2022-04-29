@@ -2,6 +2,7 @@ package co.edu.unbosque.view;
 
 import javax.swing.JOptionPane;
 
+import co.edu.unbosque.model.Cola;
 import co.edu.unbosque.model.NodoA;
 
 public class View {
@@ -28,7 +29,6 @@ public class View {
 			mostrarPreorden(raiz.getIzquierda());
 			mostrarPreorden(raiz.getDerecha());
 		}
-		System.out.println();
 	}
 	
 	public void mostrarInorden(NodoA raiz) {
@@ -46,5 +46,26 @@ public class View {
 			System.out.print(raiz.getInfo()+" -- ");
 		}
 	}
+	public void mostrarNiveles(NodoA p) {
+		Cola cola = null;
+		int fila = 0;
+		if (p != null) {
+			cola = new Cola();
+			cola.encolar(p);
+		}
+		while(!cola.colaVacia()) {
+			p = (NodoA)cola.getElementoFrente();
+			cola.decolar();
+			System.out.print("->"+(int)p.getInfo());
+			if(p.getIzquierda() != null) {
+				cola.encolar(p.getIzquierda());
+			}
+			if (p.getDerecha() != null) {
+				cola.encolar(p.getDerecha());
+			}
+			
+		}
+	}
+	
 
 }

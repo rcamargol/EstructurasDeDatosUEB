@@ -3,6 +3,7 @@ package co.edu.unbosque.model;
 public class ClaseX {
 	ClaseY y;
 	ArbolBinario ab;
+	Cola c;
 	
 	public ClaseX() {
 		y = new ClaseY();
