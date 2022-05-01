@@ -6,13 +6,13 @@ public class Cola extends Lista {
 		super.insertarNodoInicio(info);
 	}
 	public void decolar() {
-		super.removerNodo(getElementoFrente().getInfo());
+		super.removerNodo((NodoA) getElementoFrente());
 	}
-	public NodoL getElementoFrente() {
+	public Object getElementoFrente() {
 		NodoL p = super.cabeza;
 		while (p.getSiguiente() != null)
 			p = p.getSiguiente();
-		return p;
+		return p.getInfo();
 	}
 	public int numElementosCola() {
 		int i = 0;
