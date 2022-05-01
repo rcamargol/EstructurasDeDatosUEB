@@ -19,6 +19,8 @@ public class Controller {
 		//gui.mostrarPreorden(m.crearArbol());
 		//gui.mostrarInorden(m.crearArbol());
 		//gui.mostrarPosorden(m.crearArbol());
-		gui.mostrarNiveles(m.crearArbol());
+		//m.crearABB();
+		gui.mostrarInorden(m.crearABB());
+		//gui.mostrarInorden(m.getAb().buscarArbolABB(7));
 	}
 }

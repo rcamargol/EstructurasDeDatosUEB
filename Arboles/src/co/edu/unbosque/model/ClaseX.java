@@ -4,7 +4,7 @@ public class ClaseX {
 	ClaseY y;
 	ArbolBinario ab;
 	Cola c;
-	
+
 	public ClaseX() {
 		y = new ClaseY();
 		ab = new ArbolBinario();
@@ -15,9 +15,9 @@ public class ClaseX {
 	}
 
 	public int sumar20alDato(int dato) {
-		return dato+20;
+		return dato + 20;
 	}
-	
+
 	public NodoA crearArbol() {
 		NodoA a, a1, a2;
 		Pila p = new Pila();
@@ -29,15 +29,23 @@ public class ClaseX {
 		a2 = ab.nuevoArbol(null, 10, null);
 		a = ab.nuevoArbol(a1, 6, a2);
 		p.hacerPUSH(a);
-		a2 = (NodoA)p.hacerPEEK();
+		a2 = (NodoA) p.hacerPEEK();
 		p.hacerPOP();
-		a1 = (NodoA)p.hacerPEEK();
+		a1 = (NodoA) p.hacerPEEK();
 		p.hacerPOP();
 		a = ab.nuevoArbol(a1, 3, a2);
 		return a;
 	}
-	
-	
+
+	public NodoA crearABB() {
+		int[] valores = { 3, 2, 6, 5, 8, 7, 10 };
+		ab = new ArbolBinario();
+		for (int i = 0; i < valores.length; i++) {
+			ab.insertarArbolABB(valores[i]);
+		}
+		return ab.getRaiz();
+	}
+
 	public ArbolBinario getAb() {
 		return ab;
 	}
@@ -54,5 +62,4 @@ public class ClaseX {
 		this.y = y;
 	}
 
-	
 }

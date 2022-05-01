@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 import co.edu.unbosque.model.Cola;
 import co.edu.unbosque.model.NodoA;
+import co.edu.unbosque.model.NodoL;
 
 public class View {
 	
@@ -46,24 +47,39 @@ public class View {
 			System.out.print(raiz.getInfo()+" -- ");
 		}
 	}
+	
+	public void mostrarLista(NodoL nodo) {
+		int i = 0;
+		NodoA nodoa = null;
+		if (nodo == null)
+			System.out.println("Lista vacia");
+		else
+			while (nodo != null) {
+				nodoa = (NodoA)nodo.getInfo();
+				System.out.print("(" + nodoa.getInfo()+")-->");
+				nodo = nodo.getSiguiente();
+			}
+			System.out.println();
+	}
+	
 	public void mostrarNiveles(NodoA p) {
 		Cola cola = null;
-		int fila = 0;
+		//int fila = 0;
 		if (p != null) {
 			cola = new Cola();
 			cola.encolar(p);
 		}
 		while(!cola.colaVacia()) {
+			mostrarLista(cola.getCabeza());
 			p = (NodoA)cola.getElementoFrente();
 			cola.decolar();
-			System.out.print("->"+(int)p.getInfo());
+			System.out.println("->"+(int)p.getInfo());
 			if(p.getIzquierda() != null) {
 				cola.encolar(p.getIzquierda());
 			}
 			if (p.getDerecha() != null) {
 				cola.encolar(p.getDerecha());
 			}
-			
 		}
 	}
 	
