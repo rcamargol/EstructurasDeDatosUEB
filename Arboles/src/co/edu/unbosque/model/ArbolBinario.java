@@ -54,6 +54,13 @@ public class ArbolBinario {
 		}
 		return valor;
 	}
+	
+	public void borrarNodoArbolABB(NodoA info) {
+		NodoA auxiliar = this.raiz;
+		NodoA padre = this.raiz;
+		
+		
+	}
 
 	public NodoA getRaiz() {
 		return raiz;

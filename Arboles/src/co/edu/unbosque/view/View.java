@@ -69,17 +69,21 @@ public class View {
 			cola = new Cola();
 			cola.encolar(p);
 		}
+		System.out.print("Encolar Raiz:");
+		mostrarLista(cola.getCabeza());
 		while(!cola.colaVacia()) {
-			mostrarLista(cola.getCabeza());
 			p = (NodoA)cola.getElementoFrente();
 			cola.decolar();
-			System.out.println("->"+(int)p.getInfo());
+			System.out.println("Decolar["+(int)p.getInfo()+"] ");
+			//System.out.println("** Elemento->"+(int)p.getInfo());
 			if(p.getIzquierda() != null) {
 				cola.encolar(p.getIzquierda());
 			}
 			if (p.getDerecha() != null) {
 				cola.encolar(p.getDerecha());
 			}
+			System.out.print("Encolar izq, der:");
+			mostrarLista(cola.getCabeza());
 		}
 	}
 	
