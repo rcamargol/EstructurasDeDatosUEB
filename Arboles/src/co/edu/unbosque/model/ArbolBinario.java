@@ -100,16 +100,16 @@ public class ArbolBinario {
 	public NodoA buscarPadre(NodoA q) {
 		Cola cola = null;
 		NodoA p = this.raiz;
-		boolean encontro = false;
+		NodoA padre = null;
 		if (p != null) {
 			cola = new Cola();
 			cola.encolar(p);
 		}
-		while (!cola.colaVacia() && !encontro) {
+		while (!cola.colaVacia() && padre == null) {
 			p = (NodoA) cola.getElementoFrente();
 			cola.decolar();
 			if (p.getDerecha() == q || p.getIzquierda() == q)
-				encontro = true;
+				padre = p;
 			else if (p.getIzquierda() != null) {
 				cola.encolar(p.getIzquierda());
 			}
@@ -117,10 +117,7 @@ public class ArbolBinario {
 				cola.encolar(p.getDerecha());
 			}
 		}
-		if (encontro)
-			return p;
-		else
-			return null;
+		return padre;
 	}
 
 	public NodoA getRaiz() {
