@@ -36,30 +36,31 @@ public class ArbolBinario {
 			else
 				anterior.setDerecha(nuevo);
 		}
-		//System.out.println("raiz:" + this.raiz.getInfo() + "-- valor ABB:" + nuevo.getInfo());
+		// System.out.println("raiz:" + this.raiz.getInfo() + "-- valor ABB:" +
+		// nuevo.getInfo());
 	}
-	
+
 	public NodoA buscarArbolABB(Object info) {
 		NodoA valor = null;
 		boolean encontro = false;
 		NodoA p = this.raiz;
 		while (p != null && !encontro) {
-			if((int) p.getInfo() == (int)info) {
+			if ((int) p.getInfo() == (int) info) {
 				valor = p;
 				encontro = true;
-			}
-			else {
+			} else {
 				p = (int) p.getInfo() > (int) info ? p.getIzquierda() : p.getDerecha();
 			}
 		}
 		return valor;
 	}
-	/* p: apuntador del nodo a retirar
-	 * q: apuntador al nodo padre de p
+
+	/*
+	 * p: apuntador del nodo a retirar q: apuntador al nodo padre de p
 	 */
-	public void borrarNodoArbolABB(NodoA q, NodoA p) {
+	private void borrarNodoArbolABB(NodoA p, NodoA q) {
 		NodoA r, t, s;
-		if(p.getIzquierda() == null)
+		if (p.getIzquierda() == null)
 			r = p.getDerecha();
 		else {
 			s = p;
@@ -78,25 +79,48 @@ public class ArbolBinario {
 		}
 		if (q == null)
 			this.raiz = r;
-		else 
-			if (p == q.getIzquierda())
-				q.setIzquierda(r);
-			else
-				q.setDerecha(r);
+		else if (p == q.getIzquierda())
+			q.setIzquierda(r);
+		else
+			q.setDerecha(r);
 	}
 
-	private NodoA borrarNodoArbolABB(NodoA raiz, Object info) {
-		if(raiz == null)
-			return null;
-		else {
-			if((int)info < (int)raiz.getInfo()) {
-				NodoA iz;
-				iz = borrarNodoArbolABB(raiz.getIzquierda(), info);
-			}
+	public NodoA borrarNodoArbolABB(Object info) {
+		NodoA p, q;
+		p = buscarArbolABB(info);
+		if (p != null) {
+			q = buscarPadre(p);
+			borrarNodoArbolABB(p, q);
 		}
 		return null;
 	}
-	
+
+	public NodoA buscarPadre(NodoA q) {
+		Cola cola = null;
+		NodoA p = this.raiz;
+		boolean encontro = false;
+		if (p != null) {
+			cola = new Cola();
+			cola.encolar(p);
+		}
+		while (!cola.colaVacia() && !encontro) {
+			p = (NodoA) cola.getElementoFrente();
+			cola.decolar();
+			if (p.getDerecha() == q || p.getIzquierda() == q)
+				encontro = true;
+			else if (p.getIzquierda() != null) {
+				cola.encolar(p.getIzquierda());
+			}
+			if (p.getDerecha() != null) {
+				cola.encolar(p.getDerecha());
+			}
+		}
+		if (encontro)
+			return p;
+		else
+			return null;
+	}
+
 	public NodoA getRaiz() {
 		return raiz;
 	}
