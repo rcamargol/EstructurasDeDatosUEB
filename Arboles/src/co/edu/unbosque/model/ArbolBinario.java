@@ -85,14 +85,16 @@ public class ArbolBinario {
 			q.setDerecha(r);
 	}
 
-	public NodoA borrarNodoArbolABB(Object info) {
+	public int borrarNodoArbolABB(Object info) {
 		NodoA p, q;
 		p = buscarArbolABB(info);
 		if (p != null) {
 			q = buscarPadre(p);
 			borrarNodoArbolABB(p, q);
 		}
-		return null;
+		else
+			return -1;
+		return 1;
 	}
 
 	public NodoA buscarPadre(NodoA q) {
