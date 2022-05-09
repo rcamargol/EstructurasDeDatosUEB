@@ -17,10 +17,13 @@ public class Controller {
 	
 	public void funcionar() {
 		//gui.mostrarPreorden(m.crearArbol());
-		gui.mostrarNiveles(m.crearArbol());
-		//gui.mostrarPosorden(m.crearArbol());
-		//m.crearABB();
-		//gui.mostrarInorden(m.crearABB());
-		//gui.mostrarInorden(m.getAb().buscarArbolABB(7));
+		//gui.mostrarNiveles(m.crearArbol());
+		//gui.mostrarInorden(m.crearArbol());
+		m.crearABB();
+		//gui.mostrarPreorden(m.crearABB());
+		gui.mostrarInorden(m.getAb().getRaiz());
+		//gui.mostrarInorden(m.getAb().buscarArbolABB(8));
+		System.out.println("despues de retirar 1: "+m.getAb().borrarNodoArbolABB(1));
+		gui.mostrarInorden(m.getAb().getRaiz());
 	}
 }

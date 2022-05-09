@@ -62,10 +62,12 @@ public class ArbolBinario {
 		NodoA r, t, s;
 		if (p.getIzquierda() == null)
 			r = p.getDerecha();
+		else if (p.getDerecha() == null)
+			r = p.getIzquierda();
 		else {
 			s = p;
 			r = p.getDerecha();
-			t = r.getDerecha();
+			t = r.getIzquierda();
 			while (t != null) {
 				s = r;
 				r = t;
@@ -80,9 +82,9 @@ public class ArbolBinario {
 		if (q == null)
 			this.raiz = r;
 		else if (p == q.getIzquierda())
-			q.setIzquierda(r);
+			q.setIzquierda(r);//primer caso: nodo a retirar no tiene subarbol izquierdo
 		else
-			q.setDerecha(r);
+			q.setDerecha(r);//segundo caso: nodo a retirar no tiene subarbol derecho
 	}
 
 	public int borrarNodoArbolABB(Object info) {
@@ -91,8 +93,7 @@ public class ArbolBinario {
 		if (p != null) {
 			q = buscarPadre(p);
 			borrarNodoArbolABB(p, q);
-		}
-		else
+		} else
 			return -1;
 		return 1;
 	}

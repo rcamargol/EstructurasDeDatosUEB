@@ -44,7 +44,7 @@ public class ClaseX {
 	}
 
 	public NodoA crearABB() {
-		int[] valores = { 3, 2, 6, 5, 8, 7, 10 };
+		int[] valores = { 10, 5, 1, 8, 20, 15, 30};
 		ab = new ArbolBinario();
 		for (int i = 0; i < valores.length; i++) {
 			ab.insertarArbolABB(valores[i]);
