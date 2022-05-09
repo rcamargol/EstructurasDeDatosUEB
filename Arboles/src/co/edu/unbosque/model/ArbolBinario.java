@@ -74,7 +74,7 @@ public class ArbolBinario {
 				t = t.getIzquierda();
 			}
 			if (p != s) {
-				s.setIzquierda(r.getDerecha());
+				s.setIzquierda(r.getDerecha());//Regla 3
 				r.setDerecha(p.getDerecha());
 			}
 			r.setIzquierda(p.getIzquierda());
