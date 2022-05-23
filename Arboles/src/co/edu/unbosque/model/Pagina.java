@@ -1,7 +1,7 @@
 package co.edu.unbosque.model;
 
 public class Pagina {
-	
+	//relativo a la pagina del arbol B
 	private final int N = 2;
 	private final int M = 3;
 	private final int M1 = 5; //M1 = M + 1
