@@ -104,7 +104,7 @@ public class ArbolBinario {
 		NodoA padre = null;
 		if (p != null) {
 			cola = new Cola();
-			cola.encolar(p);
+			cola.encolar(p);//prueba
 		}
 		while (!cola.colaVacia() && padre == null) {
 			p = (NodoA) cola.getElementoFrente();
