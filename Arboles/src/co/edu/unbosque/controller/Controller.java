@@ -17,6 +17,12 @@ public class Controller {
 	
 	public void funcionar() {
 		//gui.mostrarPreorden(m.crearArbol());
+		//gui.mostrarInorden(m.crearArbol());
+		gui.mostrarNiveles(m.crearArbol());
+		//gui.mostrarPosorden(m.crearArbol());
+		//m.crearABB();
+		//gui.mostrarInorden(m.crearABB());
+		//gui.mostrarInorden(m.getAb().buscarArbolABB(7));
 		//gui.mostrarNiveles(m.crearArbol());
 		//gui.mostrarInorden(m.crearArbol());
 		m.crearABB();

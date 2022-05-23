@@ -31,16 +31,16 @@ public class Controller {
 	}
 	
 	public void probarImprimirListaRec() {
-		int [] numeros = {7,3,8,5};
+		int [] numeros = {4,6,3};
 		for (int i = 0 ; i< numeros.length ; i++) {
 			m.getL().insertarNodoFinal(numeros[i]);
 		}
 		System.out.println("Original");
 		gui.mostrarLista(m.getL().getCabeza());
-		//m.getL().invertirLista();
+		m.getL().invertirLista();
 		//m.getL().invertirListaRecursiva(m.getL().getCabeza(),m.getL().getCabeza().getSiguiente());
-		System.out.println("Recursiva");
-		gui.mostrarListaRec(m.getL().getCabeza());
+		System.out.println("Invertida");
+		gui.mostrarLista(m.getL().getCabeza());
 		System.out.println();
 		System.out.println("contar ReC:"+m.getL().contarNodosRec(m.getL().getCabeza()));
 		System.out.println("suma info ReC:"+m.getL().sumarInfoRec(m.getL().getCabeza()));

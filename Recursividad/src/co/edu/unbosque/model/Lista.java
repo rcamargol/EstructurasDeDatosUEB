@@ -225,6 +225,17 @@ public class Lista {
 		}
 		return suma;
 	}
+	
+	public int procesoRecursivo(Nodo nodo) {
+		int valor = 1;
+		if (nodo == null)
+			valor = 0;
+		else if (nodo.getSiguiente() != null) {
+			valor += procesoRecursivo(nodo.getSiguiente());
+		}
+		return valor;
+	}	
+	
 
 	// getters y setters
 	public Nodo getNodo() {
