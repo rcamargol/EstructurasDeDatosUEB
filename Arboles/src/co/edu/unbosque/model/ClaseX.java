@@ -3,11 +3,13 @@ package co.edu.unbosque.model;
 public class ClaseX {
 	ClaseY y;
 	ArbolBinario ab;
+	ArbolB aB;
 	Cola c;
 
 	public ClaseX() {
 		y = new ClaseY();
 		ab = new ArbolBinario();
+		aB = new ArbolB();
 	}
 
 	public String procesarDato(String dato) {
@@ -50,6 +52,12 @@ public class ClaseX {
 			ab.insertarArbolABB(valores[i]);
 		}
 		return ab.getRaiz();
+	}
+	
+	public void crearArbolB() {
+		Pagina p,q,r;
+		//int
+		//p.setInfo();
 	}
 
 	public ArbolBinario getAb() {
