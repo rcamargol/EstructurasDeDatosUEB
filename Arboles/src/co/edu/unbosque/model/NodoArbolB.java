@@ -1,7 +1,7 @@
 package co.edu.unbosque.model;
 
 /**
- *
+ * https://github.com/csanjuanc/estructuras-de-datos
  * @author Carlos San Juan <carlossanjuanc@gmail.com>
  */
 public class NodoArbolB {
