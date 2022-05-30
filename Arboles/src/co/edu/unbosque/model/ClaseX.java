@@ -59,6 +59,7 @@ public class ClaseX {
 		//int
 		//p.setInfo();
 	}
+	
 
 	public ArbolBinario getAb() {
 		return ab;
