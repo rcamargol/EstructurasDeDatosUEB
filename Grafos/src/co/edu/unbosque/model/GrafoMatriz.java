@@ -20,7 +20,7 @@ public class GrafoMatriz {
 	}
 
 	public void nuevoVertice(String nombre) {
-		boolean esta = numVertice(nombre) >= 0;
+		boolean esta = buscarVertice(nombre) >= 0;
 		if (!esta) {
 			Vertice v = new Vertice(nombre);
 			v.setNumeroVertice(numeroVertices);
@@ -28,7 +28,7 @@ public class GrafoMatriz {
 		}
 	}
 
-	public int numVertice(String numero) {
+	public int buscarVertice(String numero) {
 		Vertice v = new Vertice(numero);
 		boolean encontrado = false;
 		int i = 0;
@@ -43,8 +43,8 @@ public class GrafoMatriz {
 
 	public void nuevoArco(String a, String b) throws Exception {
 		int va, vb;
-		va = numVertice(a);
-		vb = numVertice(b);
+		va = buscarVertice(a);
+		vb = buscarVertice(b);
 		if (va < 0 || vb < 0)
 			throw new Exception("Vértice no existe");
 		this.matrizAdy[va][vb] = 1;
@@ -58,8 +58,8 @@ public class GrafoMatriz {
 
 	public boolean adyacente(String a, String b) throws Exception {
 		int va, vb;
-		va = numVertice(a);
-		vb = numVertice(b);
+		va = buscarVertice(a);
+		vb = buscarVertice(b);
 		if (va < 0 || vb < 0)
 			throw new Exception("Vértice no existe");
 		return this.matrizAdy[va][vb] == 1;
@@ -70,5 +70,38 @@ public class GrafoMatriz {
 			throw new Exception("Vértice no existe");
 		return this.matrizAdy[va][vb] == 1;
 	}
+
+	public int getNumeroVertices() {
+		return numeroVertices;
+	}
+
+	public void setNumeroVertices(int numeroVertices) {
+		this.numeroVertices = numeroVertices;
+	}
+
+	public static int getMaxVertices() {
+		return MaxVertices;
+	}
+
+	public static void setMaxVertices(int maxVertices) {
+		MaxVertices = maxVertices;
+	}
+
+	public Vertice[] getVertices() {
+		return vertices;
+	}
+
+	public void setVertices(Vertice[] vertices) {
+		this.vertices = vertices;
+	}
+
+	public int[][] getMatrizAdy() {
+		return matrizAdy;
+	}
+
+	public void setMatrizAdy(int[][] matrizAdy) {
+		this.matrizAdy = matrizAdy;
+	}
+	
 	
 }

@@ -37,4 +37,13 @@ public class View {
 		}
 		return matriz;
 	}
+	
+	public void imprimirGrafo(int[][] matriz, int maximo) {
+		for (int i=0; i<maximo ; i++ ) {
+			for (int j=0; j<maximo ; j++) {
+				System.out.print(matriz[i][j]+" -- ");
+			}
+			System.out.println();
+		}
+	}
 }
