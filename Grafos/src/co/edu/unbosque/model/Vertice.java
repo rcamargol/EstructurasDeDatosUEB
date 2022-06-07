@@ -4,8 +4,8 @@ public class Vertice {//Representa un nodo en el grafo
 	private String nombreVertice;
 	private int numeroVertice;
 
-	public Vertice(String x) {
-		this.nombreVertice = x;
+	public Vertice(String nombre) {
+		this.nombreVertice = nombre;
 		this.numeroVertice  = -1;
 	}
 
@@ -14,15 +14,17 @@ public class Vertice {//Representa un nodo en el grafo
 		return this.nombreVertice;
 	}
 
-	public boolean equals(Vertice n) // true, si dos vértices son iguales
+	public boolean equals(Vertice vertice) // true, si dos vértices son iguales
 	{
-		return nombreVertice.equals(n.nombreVertice);
+		return nombreVertice.equals(vertice.nombreVertice);
 	}
 
-	public void setNumVertice(int n) // establece el número de vértices
+	public int getNumeroVertice() {
+		return numeroVertice;
+	}
 
-	{
-		this.numeroVertice = n;
+	public void setNumeroVertice(int numeroVertice) {
+		this.numeroVertice = numeroVertice;
 	}
 
 	public String toString() // características del vértice

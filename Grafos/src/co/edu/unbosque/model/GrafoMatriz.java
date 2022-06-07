@@ -10,26 +10,26 @@ public class GrafoMatriz {
 		this(MaxVertices);
 	}
 
-	public GrafoMatriz(int mx) {
-		this.matrizAdy = new int[mx][mx];
-		this.vertices = new Vertice[mx];
-		for (int i = 0; i < mx; i++)
-			for (int j = 0; i < mx; i++)
+	public GrafoMatriz(int maximo) {
+		this.matrizAdy = new int[maximo][maximo];
+		this.vertices = new Vertice[maximo];
+		for (int i = 0; i < maximo; i++)
+			for (int j = 0; i < maximo; i++)
 				this.matrizAdy[i][j] = 0;
 		this.numeroVertices = 0;
 	}
 
-	public void nuevoVertice(String nom) {
-		boolean esta = numVertice(nom) >= 0;
+	public void nuevoVertice(String nombre) {
+		boolean esta = numVertice(nombre) >= 0;
 		if (!esta) {
-			Vertice v = new Vertice(nom);
-			v.setNumVertice(numeroVertices);
+			Vertice v = new Vertice(nombre);
+			v.setNumeroVertice(numeroVertices);
 			vertices[numeroVertices++] = v;
 		}
 	}
 
-	public int numVertice(String vs) {
-		Vertice v = new Vertice(vs);
+	public int numVertice(String numero) {
+		Vertice v = new Vertice(numero);
 		boolean encontrado = false;
 		int i = 0;
 		for (; (i < numeroVertices) && !encontrado;) {
