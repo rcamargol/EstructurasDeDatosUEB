@@ -21,7 +21,7 @@ public class View {
 	}
 	
 	public int[][] leerGrafo(int maximo){
-		int[][] matriz = null;
+		int[][] matriz = new int[maximo][maximo];
 		int vertice, ady;
 		for(int i=0 ; i<maximo ; i++ )
 			for (int j=0 ; j< maximo ; j++)
@@ -31,7 +31,7 @@ public class View {
 			ady = pedirDatoEntero("Digite Adyacencia del Vertice - 99 para terminar");
 			while (ady != 99) {
 				matriz[vertice][ady] = 1;
-				
+				ady = pedirDatoEntero("Digite Adyacencia del Vertice - 99 para terminar");
 			}
 			vertice = pedirDatoEntero("Digite Fila Vertice - 99 para terminar");
 		}

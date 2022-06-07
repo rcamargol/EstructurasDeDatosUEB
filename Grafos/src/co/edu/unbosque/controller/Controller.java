@@ -11,6 +11,7 @@ public class Controller {
 	public Controller() {
 		m = new ClaseX();
 		gui = new View();
-		gui.mostrarResultados(m.procesarDato(gui.pedirDato()));
+		m.getG().setMatriz(gui.leerGrafo(4));
+		//gui.mostrarResultados(m.procesarDato(gui.pedirDato()));
 	}
 }
