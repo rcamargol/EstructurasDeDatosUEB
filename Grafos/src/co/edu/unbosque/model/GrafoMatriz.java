@@ -1,10 +1,10 @@
 package co.edu.unbosque.model;
 
 public class GrafoMatriz {
-	private int numeroVertices; //numero de vertices que tiene el grafo
+	private static int numeroVertices; // numero de vertices que tiene el grafo
 	private static int MaxVertices = 20;
-	private Vertice[] vertices; //arreglo de vertices que tiene el grafo
-	private int[][] matrizAdy; //matriz de adyacencia 
+	private static Vertice[] vertices; // arreglo de vertices que tiene el grafo
+	private int[][] matrizAdy; // matriz de adyacencia
 
 	public GrafoMatriz() {
 		this(MaxVertices);
@@ -28,7 +28,7 @@ public class GrafoMatriz {
 		}
 	}
 
-	public int buscarVertice(String numero) {
+	public static int buscarVertice(String numero) {
 		Vertice v = new Vertice(numero);
 		boolean encontrado = false;
 		int i = 0;
@@ -70,7 +70,35 @@ public class GrafoMatriz {
 			throw new Exception("Vértice no existe");
 		return this.matrizAdy[va][vb] == 1;
 	}
-
+/*
+	public static int[]recorrerAnchura(String org) throws Exception {
+		int w, v;
+		int [] m;
+		v = buscarVertice(org);
+		if (v < 0) throw new Exception("Vértice origen no existe");
+		Cola cola = new Cola();
+		m = new int[numeroDeVertices()];
+		// inicializa los vértices como no marcados
+		for (int i = 0; i < g.numeroDeVertices(); i++)
+			m[i] = CLAVE;
+		m[v] = 0; // vértice origen queda marcado
+		cola.insertar(new Integer(v));
+		while (! cola.colaVacia()){
+			Integer cw;
+			cw = (Integer) cola.quitar()
+			w = cw.intValue();
+			System.out.println("Vértice " + g.verts[w] + "visitado");
+			// inserta en la cola los adyacentes de w no marcados
+			for (int u = 0; u < g.numeroDeVertices(); u++)
+				if ((g.matAd[w][u] == 1) && (m[u] == CLAVE)){
+					// se marca vertice u con número de arcos hasta el
+					m[u] = m[w] + 1;
+					cola.insertar(new Integer(u));
+				}
+			}
+		return m;
+	}
+*/
 	public int getNumeroVertices() {
 		return numeroVertices;
 	}
@@ -102,6 +130,5 @@ public class GrafoMatriz {
 	public void setMatrizAdy(int[][] matrizAdy) {
 		this.matrizAdy = matrizAdy;
 	}
-	
-	
+
 }
